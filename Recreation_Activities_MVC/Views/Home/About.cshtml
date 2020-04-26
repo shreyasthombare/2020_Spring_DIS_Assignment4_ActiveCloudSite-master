@@ -1,0 +1,91 @@
+﻿@{
+    ViewData["Title"] = "Abous Us";
+}
+<head>
+    <title>Recreational Activities</title>
+
+    <link rel="stylesheet" type="text/css" href="~/css/index.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,500"
+          rel="stylesheet"
+          type="text/css" />
+    <link rel="stylesheet"
+          type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Pacifico|Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="head">
+        <div class="topnav">
+            <a asp-area="" asp-controller="Home" asp-action="Index">HOME</a>
+            <a asp-area="" asp-controller="Home" asp-action="Read_rec_data">EXPLORE</a>
+            <a asp-area="" asp-controller="Signups" asp-action="Index">DISPLAY CHARTS</a>
+            <a asp-area="" asp-controller="Signups" asp-action="Create">SIGN UP</a>
+            <a class="active" asp-area="" asp-controller="Home" asp-action="About">ABOUT US</a>
+
+
+        </div>
+        <div class="ab_section" style="overflow-x:auto;">
+            <h1 class="about_us" align="left">Our Purpose Defines US</h1>
+            <h1 class="about_us" align="left">Our Purpose Defines US</h1>
+            <h3><a href="https://github.com/shreyasthombare/2020_Spring_DIS_Assignment4_ActiveCloudSite-master">Github Link</a></h3>
+            <div class="ab_section_2" style="overflow-x:auto;">
+                <table class="ab_table" cellspacing="10" style="overflow-x:auto;">
+                    <tr>
+                        <td style="padding-right:5px"><img class="ab_img " src="~/img/shreyas.jpg" align="left" style="width:300px;height:250px"></td>
+                        <td style="padding-right:5px"><img class="ab_img" src="~/img/snehal.jpg" align="left" style="width:300px;height:250px"></td>
+                        <td style="padding-right:5px"><img class="ab_img" src="~/img/aditi.jpg" align="left" style="width:300px;height:250px"></td>
+                    </tr>
+                    <tr>
+                        <td style="padding-right:5px">Shreyas Thombare</td>
+                        <td style="padding-right:5px">Snehal Maid</td>
+                        <td style="padding-right:5px">Aditi Kochar</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="ab_section_2" style="overflow-x:auto;">
+                <table class="ab_table" style="overflow-x:auto;">
+                    <tr>
+                        <td><h2> Our Focus </h2></td>
+                    </tr>
+                    <tr>
+                        <td><h3> We developed a web application tailored for recreational activities in Montgomery county. It enables sign up for a specific recreational activity and perform CRUD operations. A complete version of the app is deployed to the Azure account</h3></td>
+                    </tr>
+                  
+                    <tr>
+                        <td><h2> Content </h2></td>
+                    </tr>
+                    <tr>
+                        <td><h3> Data is sourced from data.gov and includes details of Montgomery county recreation activities. Data is fetched from the API into the database and accessed, displayed on the web page </h3></td>
+                    </tr>
+                    <tr>
+                        <td><h2> Usability </h2></td>
+                    </tr>
+                    <tr>
+                        <td><h3> Data is displayed only to show the functionality that we have implemented. We have summarised our dataset in a nutshell and have focused on tables, images, charts for better visibility</h3></td>
+                    </tr>
+                    <tr>
+                        <td><h2> Responsiveness </h2></td>
+                    </tr>
+                    <tr>
+                        <td><h3> This assignment helped us to build a website from scratch. We have used viewport and "meta" tag in order to make table and images responsive</h3></td>
+                    </tr>
+                    <tr>
+                        <td><h2> Learning </h2></td>
+                    </tr>
+                    <tr>
+                        <td><h3> We approached the assignment by making wireframes and implemented them to create engaging and interactive website. Subsequently we got hands-on on Bootstrap, Jquery, Javascript, Chart.js, HTML, CSS, Asp.net MVC application on Visual Studio</h3></td>
+                    </tr>
+                    <tr>
+                        <td><h2> Contribution of the group members </h2></td>
+                    </tr>
+                    <tr>
+                        <td><h3> We worked collaboratively to make the website up and running by implementing required functionaly whilst designing and developing each web page. Website is running as a live web app on Azure</h3></td>
+                    </tr>
+
+
+                </table>
+            </div>
+        </div>
+</body>
