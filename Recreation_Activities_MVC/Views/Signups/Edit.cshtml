@@ -1,0 +1,140 @@
+﻿@model IEXTrading.Models.Signup
+
+@{
+    ViewData["Title"] = "Edit";
+}
+    <head>
+        <title>Recreational Activities</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="~/css/index.css" />
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,500"
+              rel="stylesheet"
+              type="text/css" />
+        <link rel="stylesheet"
+              type="text/css"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Pacifico|Roboto&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="head">
+            <div class="topnav">
+                <a asp-area="" asp-controller="Home" asp-action="Index">HOME</a>
+                <a asp-area="" asp-controller="Home" asp-action="Read_rec_data">EXPLORE</a>
+                <a class="active" asp-area="" asp-controller="Signups" asp-action="Create">SIGN UP</a>
+                <a asp-area="" asp-controller="Signups" asp-action="Index">DISPLAY CHARTS</a>
+                <a asp-area="" asp-controller="Home" asp-action="About">ABOUT US</a>
+
+
+            </div>
+        </div>
+
+            <h2>Edit</h2>
+
+            <h4>Signup</h4>
+            <hr />
+            <div class="row">
+                <div class="col-md-4">
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                     
+                 
+                        <div class="form-group">
+                            <label asp-for="first_name" class="control-label"></label>
+                            <input asp-for="first_name" class="form-control" />
+                            <span asp-validation-for="first_name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="last_name" class="control-label"></label>
+                            <input asp-for="last_name" class="form-control" />
+                            <span asp-validation-for="last_name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="age" class="control-label"></label>
+                            <input asp-for="age" class="form-control" />
+                            <span asp-validation-for="age" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Email" class="control-label"></label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="activity" class="control-label"></label>
+                            <select asp-for="activity" class="form-control">
+                                <option value="default"></option>
+                                <option value="Badminton">Badminton</option>
+                                <option value="Basketball">Basketball</option>
+                                <option value="Pickleball">Pickleball</option>
+                                <option value="Tiny_Tots">Tiny Tots</option>
+                                <option value="Table_Tennis">Table Tennis</option>
+                                <option value="Volleyball">Volleyball</option>
+
+                            </select>
+                            <span asp-validation-for="activity" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="recreation_center" class="control-label"></label>
+                            <select asp-for="recreation_center" class="form-control">
+                                <option value="default"></option>
+                                <option value="Potomac_Community_Center">Potomac Community Center</option>
+                                <option value="Lawton_Community_Center  ">Lawton Community Center</option>
+                                <option value="Damascus_Community_Center">Damascus Community Center</option>
+                                <option value="North_Potomac_Community_Center">North Potomac Community Center</option>
+                                <option value="Long_Branch_Community_Center">Long Branch Community Center</option>
+                                <option value="Plum_Gar_Community_Center">Plum Gar Community Center</option>
+                                <option value="Wisconsin_Place_Community_Center">Wisconsin Place Community Center</option>
+                                <option value="Scotland_Community_Center  ">Scotland Community Center  </option>
+                                <option value="East_County_Community_Center">East County Community Center</option>
+                                <option value="Mid_County_Community_Center">Mid County Community Cente</option>
+                                <option value="White_Oak_Community_Center">White Oak Community Center</option>
+                                <option value="Upper_County_Community_Center">Upper County Community Center</option>
+                                <option value="Coffield_Community_Center">Coffield Community Center</option>
+                                <option value="Bauer_Drive_Community_Center  ">Bauer Drive Community Center  </option>
+                                <option value="Praisner_Community_Center">Praisner Community Center</option>
+                                <option value="Ross_Boddy_Community_Center">Ross Boddy Community Center</option>
+                                <option value="Damascus_Community_Center">Damascus Community Center</option>
+                                <option value="Germantown_Community_Center">Germantown Community Center</option>
+                            </select>
+                            <span asp-validation-for="recreation_center" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="days_of_week" class="control-label"></label>
+                            <select asp-for="days_of_week" class="form-control">
+                                <option value="default"></option>
+                                <option value="sunday">Sunday</option>
+                                <option value="monday">Monday</option>
+                                <option value="tuesday">Tuesday</option>
+                                <option value="wednesday">Wednesday</option>
+                                <option value="thursday">Thursday</option>
+                                <option value="friday">friday</option>
+                                <option value="saturday">Saturday</option>
+                            </select>
+                            <span asp-validation-for="days_of_week" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="times" class="control-label"></label>
+                            <input asp-for="times" class="form-control" />
+                            <span asp-validation-for="times" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Save" class="btn btn-default" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div>
+                <a asp-action="Index">Back to List</a>
+            </div>
+        </body>
+            @section Scripts {
+                @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+            }

@@ -1,0 +1,114 @@
+﻿@model IEnumerable<IEXTrading.Models.Signup>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<head>
+    <title>Recreational Activities</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/css/index.css" />
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,500"
+          rel="stylesheet"
+          type="text/css" />
+    <link rel="stylesheet"
+          type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Pacifico|Roboto&display=swap" rel="stylesheet">
+    <script>
+            $(document).ready(function () {
+                $("#searchbar").on("keyup", function () {
+                    var value = $(this).val().toLowerCase();
+                    $("#myTable tr").filter(function () {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                });
+            });
+    </script>
+</head>
+<body>
+    <div class="head">
+        <div class="topnav">
+            <a asp-area="" asp-controller="Home" asp-action="Index">HOME</a>
+            <a asp-area="" asp-controller="Home" asp-action="Read_rec_data">EXPLORE</a>
+            <a class="active" asp-area="" asp-controller="Signups" asp-action="Index">DISPLAY CHARTS</a>
+            <a asp-area="" asp-controller="Signups" asp-action="Create">SIGN UP</a>
+            <a asp-area="" asp-controller="Home" asp-action="About">ABOUT US</a>
+
+        </div>
+    </div>
+    <h2>List of Customers</h2>
+    <h4 style="text-align:center;color:purple"> This page mainly displays one to many relationship. Here we have displayed list of customers 
+        who signup up for an activity at the recreation center only for Sunday as Customers signing for sunday can avial early bird offers.</h4>
+    <h5 style="text-align:center;color:purple">Please note here we have developed an edit and delete option on the page 
+    just to show and enhance implemented functionality in our application for the assignment. We will eventually remove this functionality to preserve data privacy</h5>
+   <!--<p style="text-align:center">
+        <a class="btn btn-info" asp-action="Create">New Customer Signup</a><br /><br />
+        <a class="btn btn-success" asp-area="" asp-controller="Signups" asp-action="chart">Display Proportion of Customer SignUps Based on Activity</a><br /><br />
+        <a class="btn btn-warning" asp-area="" asp-controller="Signups" asp-action="chart_rec">Display Proportion of Customer SignUps Based on Recreation Center</a>
+    </p>-->
+    <br /><br />
+    <input class="form-control" id="searchbar" type="text" placeholder="Search.." style="height:30px;width:500px;margin-left:350px">
+    <table class="table">
+        <thead>
+            <tr>
+
+               
+                <th>First Name</th>
+                <th>Last Name</th>
+                
+                <th>Activity</th>
+                <th>Recreation Center</th>
+                <th>Days of Week</th>
+                <th>Times</th>
+
+
+            </tr>
+        </thead>
+        <tbody id="myTable">
+            @foreach (var item in Model)
+            {
+                <tr>
+                  
+                    <td>
+                        @Html.DisplayFor(modelItem => item.first_name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.last_name)
+                    </td>
+                   
+                    <td>
+                        @Html.DisplayFor(modelItem => item.activity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.recreation_center)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.days_of_week)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.times)
+                    </td>
+                 
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+    <div>
+        <a asp-action="Index">Back to Charts</a>
+    </div>
+</body>

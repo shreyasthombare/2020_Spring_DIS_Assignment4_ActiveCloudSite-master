@@ -1,0 +1,95 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<head>
+    <title>Recreational Activities</title>
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,500"
+          rel="stylesheet"
+          type="text/css" />
+    <link rel="stylesheet"
+          type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Pacifico|Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="head">
+        <div class="topnav">
+            <a class="active" asp-area="" asp-controller="Home" asp-action="Index">HOME</a>
+            <a asp-area="" asp-controller="Home" asp-action="Read_rec_data">EXPLORE</a>
+            <a asp-area="" asp-controller="Signups" asp-action="Create">SIGN UP</a>
+            <a asp-area="" asp-controller="Signups" asp-action="Index">DISPLAY CHARTS</a>
+            <a asp-area="" asp-controller="Home" asp-action="About">ABOUT US</a>
+
+
+
+
+            <div class="bodyone">
+
+            </div>
+        </div>
+
+
+        <div>
+            <h1 class="home_about_dataset" align="center">Montgomery County Recreation Spring Gym Activities</h1>
+        </div>
+        <div class="desc">
+            <h2>
+                Montgomery County Recreation has 21 recreation centers located throughout Montgomery County that offers a wide range of activities for children, teens, and adults to ensure that individual gymnasts of all skill levels and ages can progress and improve!
+                <blink style="color:red">Signup to get early bird offer for Sunday</blink>
+            </h2>
+        </div>
+        <div class="act_table" style="overflow-x:auto;">
+            <h1 class="home_act"> Activities Include: </h1></marquee>   
+
+            <table class="table_act_home">
+
+                <tr>
+                    <td>
+                        Pickleball
+                    </td>
+
+                    <td>
+                        Tiny Tots
+                    </td>
+                    <td>
+                        Basketball
+                    </td>
+
+                    <td>
+                        Badminton
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Table Tennis
+                    </td>
+                    <td>
+                        Volleyball
+                    </td>
+
+
+                    <td>
+                        Open Gym
+                    </td>
+                    <td>
+                        Workshops
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+        <br>
+        <h2 style="color:purple;">
+            Our centers have diverse amenities that includes weight rooms, social halls, meeting spaces, classrooms, billiards and game rooms. In addition to strength, flexibility, vault, bars, beam, and floor training, we strive to instill a work ethic in each gymnast based on goal setting and peer support. For more information, see our front desk staff for more assistance.
+        </h2>
+
+
+    </div>
+    
+
+</body>

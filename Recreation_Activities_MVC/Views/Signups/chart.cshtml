@@ -1,0 +1,110 @@
+﻿@model IEXTrading.Models.Signup
+
+@{
+	ViewData["Title"] = "Chart";
+}
+<head>
+	<title>Recreational Activities</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="~/css/index.css" />
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700,500"
+		  rel="stylesheet"
+		  type="text/css" />
+	<link rel="stylesheet"
+		  type="text/css"
+		  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Fredoka+One|Pacifico|Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<div class="head">
+		<div class="topnav">
+			<a asp-area="" asp-controller="Home" asp-action="Index">HOME</a>
+			<a asp-area="" asp-controller="Home" asp-action="Read_rec_data">EXPLORE</a>
+			<a class="active" asp-area="" asp-controller="Signups" asp-action="Index">DISPLAY CHARTS</a>
+			<a asp-area="" asp-controller="Signups" asp-action="Create">SIGN UP</a>
+			<a asp-area="" asp-controller="Home" asp-action="About">ABOUT US</a>
+			
+
+		</div>
+	</div>
+	<script>
+        window.onload = function () {
+
+        var chart = new CanvasJS.Chart("chartContainer", {
+	    theme: "l1", // "light1", "light2", "dark1", "dark2"
+	    exportEnabled: true,
+	    animationEnabled: true,
+	    title: {
+		    text: "Recreation Center Activity Distribution"
+	    },
+	    subtitles: [{
+		    text: "Quantity of customer signing up for specific activity"
+	    }],
+	    data: [{
+		    type: "pie",
+		    startAngle: 360,
+		    toolTipContent: "Number of Customers Signed up for <b>{label}  </b>: {y}",
+		    showInLegend: "true",
+		    legendText: "Number of Customers Signed up for {label}",
+		    indexLabel: "Number of Customers Signed up for {label} - {y}",
+		    dataPoints: @Html.Raw(ViewBag.datapoints)
+	    }]
+});
+        chart.render();
+
+        }
+	</script>
+	<div id="chartContainer" style="margin-top:100px;height: 370px; width: 100%;"></div>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+
+
+	<script>
+        window.onload = function () {
+
+        var chart = new CanvasJS.Chart("chartContainer", {
+	    theme: "l1", // "light1", "light2", "dark1", "dark2"
+	    exportEnabled: true,
+	    animationEnabled: true,
+	    title: {
+		    text: "Recreation Center Activity Distribution"
+	    },
+	    subtitles: [{
+		    text: "Proportion of customer signing up for specific activity"
+	    }],
+	    data: [{
+		    type: "pie",
+		    startAngle: 360,
+		    toolTipContent: "Number of Customers Signed up for <b>{label}  </b>: {y}",
+		    showInLegend: "true",
+		    legendText: "Number of Customers Signed up for {label}",
+		    indexLabel: "Number of Customers Signed up for {label} - {y}",
+		    dataPoints: @Html.Raw(ViewBag.datapoints)
+	    }]
+});
+        chart.render();
+
+        }
+	</script>
+	<div id="chartContainer" style="margin-top:100px;height: 370px; width: 100%;"></div>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+
+
+
+	<div style="margin-top:20px">
+		<a asp-action="Index">Back to List</a>
+	</div>
+</body>
+@section Scripts {
+	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

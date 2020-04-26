@@ -1,0 +1,59 @@
+﻿@model IEnumerable<IEXTrading.Models.Signup>
+
+@{
+    ViewData["Title"] = "Index";
+}
+    <head>
+        <title>Recreational Activities</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="~/css/index.css" />
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,500"
+              rel="stylesheet"
+              type="text/css" />
+        <link rel="stylesheet"
+              type="text/css"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Pacifico|Roboto&display=swap" rel="stylesheet">
+        <script>
+            $(document).ready(function () {
+                $("#searchbar").on("keyup", function () {
+                    var value = $(this).val().toLowerCase();
+                    $("#myTable tr").filter(function () {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="head">
+            <div class="topnav">
+                <a asp-area="" asp-controller="Home" asp-action="Index">HOME</a>
+                <a asp-area="" asp-controller="Home" asp-action="Read_rec_data">EXPLORE</a>
+                <a class="active" asp-area="" asp-controller="Signups" asp-action="Index">DISPLAY CHARTS</a>
+                <a asp-area="" asp-controller="Signups" asp-action="Create">SIGN UP</a>
+                <a asp-area="" asp-controller="Home" asp-action="About">ABOUT US</a>
+
+
+                
+
+            </div>
+        </div>
+        <h2 style="color:purple">Explore Customer Preferences</h2><br />
+        <p style="text-align:center">
+            <a class="btn btn-default" asp-action="Create">New Customer Signup</a><br /><br />
+            <a class="btn btn-default"  asp-area="" asp-controller="Signups" asp-action="chart">Display Proportion of Customer SignUps Based on Activity</a><br /><br />
+            <a  class="btn btn-default" asp-area="" asp-controller="Signups" asp-action="chart_rec">Display Proportion of Customer SignUps Based on Recreation Center</a>
+           <br /><br /> <a class="btn btn-default"  asp-area="" asp-controller="Signups" asp-action="offer">Check Customers who signed up for <strong>Sunday</strong></a>
+        </p>
+       
+       
+    </body>
